@@ -87,7 +87,7 @@ colwise_ <- function(tbl, calls, vars) {
   out <- vector("list", length(vars) * length(calls))
   dim(out) <- c(length(vars), length(calls))
   
-  vars <- enc2native(vars)
+  vars <- enc2utf8(vars)
   for (i in seq_along(vars)) {
     for (j in seq_along(calls)) {
       out[[i, j]] <- lazyeval::interp(calls[[j]],
